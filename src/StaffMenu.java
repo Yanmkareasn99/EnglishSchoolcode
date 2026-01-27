@@ -1,8 +1,7 @@
-import java.util.*;
+//Staff have all the authorities except recordAttandance();
 public class StaffMenu {
 
     public static void showMenu(){
-        Scanner sc = new Scanner(System.in);
         while (true){
             try{
                 System.out.println("""
@@ -15,7 +14,7 @@ public class StaffMenu {
                 6:取消 
                 0:戻る""");
 
-                int choice = Integer.parseInt(sc.nextLine());
+                int choice = Integer.parseInt(Main.sc.nextLine());
                 switch (choice){
                     case 1 -> {
                         addStudent();
@@ -30,7 +29,7 @@ public class StaffMenu {
                         addPoints();
                     }
                     case 5 -> {
-                        resreveLesson();
+                        reserveLesson();
                     }
                     case 6 -> {
                         cancelLesson();
@@ -54,10 +53,34 @@ public class StaffMenu {
                             "名前=" + s.getName() + "  " +
                             "ID=" + s.getId() + "  " +
                             "コース=" + s.getCourse() + "  " +
-                            "ポイント=" + s.getPoints()
+                            "ポイント=" + s.getPoint()
             );
         }
 
-        System.out.println("----------------------------------------------------");
+        System.out.println("----------------------------------------");
     }
+
+    public static void addStudent(){
+        System.out.println("生徒登録");
+        System.out.println("名前= ");
+        String name = Main.sc.nextLine();
+
+    }
+
+    public static void changeStudent(){
+
+    }
+
+    public static void addPoints(){
+
+    }
+
+    public static void reserveLesson(){
+
+    }
+
+    public static void cancelLesson(){
+
+    }
+
 }

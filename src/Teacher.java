@@ -1,3 +1,4 @@
+//teacher list is managed with csv
 public class Teacher {
     private int id;
     private String name;

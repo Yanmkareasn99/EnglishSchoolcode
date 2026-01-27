@@ -1,11 +1,12 @@
+//student list is managed with csv
 public class Student {
-    private int id, age, points, phone;
-    private String name, sex, email, course, status, address;
+    private int id, age, point, phone;
+    private String name, sex, email, course, status, address, lesson;
 
-    public Student(int id, int age, int points, int phone, String name, String sex, String email, String course, String status){
+    public Student(int id, int age, int points, int phone, String name, String sex, String email, String course, String status, String lesson, String address){
         this.id = id; this.name = name; this.age = age; this.sex = sex;
         this.phone = phone; this.email = email; this.course = course;
-        this.points = points; this.status = status; this.address = address;
+        this.point = points; this.status = status; this.address = address; this.lesson = lesson;
     }
 
     public int getId() {
@@ -16,8 +17,8 @@ public class Student {
         return age;
     }
 
-    public int getPoints() {
-        return points;
+    public int getPoint() {
+        return point;
     }
 
     public int getPhone() {
@@ -48,8 +49,17 @@ public class Student {
         return address;
     }
 
+    public String getLesson(){
+        return lesson;
+    }
+
+    //points can only be purchased +200 increments
+    public void setPoint(int p){
+        point = point + p;
+    }
+
     public String toCsv() {
-        return id + "," + name + "," + age + "," + sex + "," + phone + "," + email + "," + points + "," + course + "," + status + "\n";
+        return id + "," + name + "," + age + "," + sex + "," + phone + "," + email + "," + point + "," + course + "," + lesson + "," + status + "\n";
         }
 }
 

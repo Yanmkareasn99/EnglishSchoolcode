@@ -3,8 +3,9 @@ import java.util.*;
 public class Main{
     public static List<Student> students = new ArrayList<>();
     public static List<Teacher> teachers = new ArrayList<>();
+    public static final Scanner sc = new Scanner(System.in);
 
-    static void main(String[] args) {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         while (true){
@@ -25,10 +26,10 @@ public class Main{
                 int choice = Integer.parseInt(sc.nextLine());
                 switch (choice){
                     case 1 -> {
-                        student.menu();
+                        StudentMenu.showMenu();
                     }
                     case 2 -> {
-                        teacher.menu();
+                        TeacherMenu.showMenu();
                     }
                     case 3 -> {
                         StaffMenu.showMenu();
