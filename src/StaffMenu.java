@@ -7,7 +7,7 @@ public class StaffMenu {
     public static void showMenu() {
         while (true) {
             try {
-                System.out.println(Main.LINE);
+                System.out.println(EnglishSchool.LINE);
                 System.out.print("""
                        
                         1: 生徒登録
@@ -27,7 +27,7 @@ public class StaffMenu {
                        番号を入力してください>>> """);
 
 
-                int choice = Integer.parseInt(Main.sc.nextLine());
+                int choice = Integer.parseInt(EnglishSchool.sc.nextLine());
 
                 switch (choice) {
                     case 1 -> addStudent();
@@ -53,23 +53,23 @@ public class StaffMenu {
     }
 
     public static void addStudent() {
-        System.out.println(Main.LINE);
-        int id = Main.students.size()+1;
+        System.out.println(EnglishSchool.LINE);
+        int id = EnglishSchool.students.size()+1;
 
         System.out.print("名前: ");
-        String name = Main.sc.nextLine();
+        String name = EnglishSchool.sc.nextLine();
 
         System.out.print("年齢: ");
-        int age = Integer.parseInt(Main.sc.nextLine());
+        int age = Integer.parseInt(EnglishSchool.sc.nextLine());
 
         System.out.print("性別: ");
-        String sex = Main.sc.nextLine();
+        String sex = EnglishSchool.sc.nextLine();
 
         System.out.print("電話番号: ");
-        int phone = Integer.parseInt(Main.sc.nextLine());
+        int phone = Integer.parseInt(EnglishSchool.sc.nextLine());
 
         System.out.print("Email: ");
-        String email = Main.sc.nextLine();
+        String email = EnglishSchool.sc.nextLine();
 
         String course = CourseUtil.selectCourse();
 
@@ -80,14 +80,14 @@ public class StaffMenu {
         );
         s.setRegisterDate(java.time.LocalDate.now());
 
-        Main.students.add(s);
+        EnglishSchool.students.add(s);
         System.out.println("生徒を登録しました。");
     }
 
     public static void viewStudents() {
-        System.out.println(Main.LINE);
+        System.out.println(EnglishSchool.LINE);
         System.out.println("\n------ 生徒一覧 ------");
-        for (Student s : Main.students) {
+        for (Student s : EnglishSchool.students) {
             if (!"在籍".equals(s.getStatus())) {
                 continue;
             }
@@ -102,18 +102,18 @@ public class StaffMenu {
     }
 
     public static void changeStudent() {
-        System.out.println(Main.LINE);
+        System.out.println(EnglishSchool.LINE);
         System.out.print("変更する生徒ID: ");
-        int id = Integer.parseInt(Main.sc.nextLine());
+        int id = Integer.parseInt(EnglishSchool.sc.nextLine());
 
-        for (Student s : Main.students) {
+        for (Student s : EnglishSchool.students) {
             if (s.getId() == id) {
                 if (!"在籍".equals(s.getStatus())) {
                     System.out.println("在籍中の生徒が見つかりません。");
                     return;
                 }
                 System.out.print("新しいコース名: ");
-                String course = Main.sc.nextLine();
+                String course = EnglishSchool.sc.nextLine();
                 System.out.println("****コース変更****");
                 System.out.println("変更前: " + s.getCourse());
                 s.setCourse(course);
@@ -125,11 +125,11 @@ public class StaffMenu {
     }
 
     public static void removeStudent() {
-        System.out.println(Main.LINE);
+        System.out.println(EnglishSchool.LINE);
         System.out.print("退会する生徒ID: ");
-        int id = Integer.parseInt(Main.sc.nextLine());
+        int id = Integer.parseInt(EnglishSchool.sc.nextLine());
 
-        for (Student s : Main.students) {
+        for (Student s : EnglishSchool.students) {
             if (s.getId() == id) {
                 if (!"在籍".equals(s.getStatus())) {
                     System.out.println("すでに退学済みです。");
@@ -145,7 +145,7 @@ public class StaffMenu {
     }
 
     public static Student findStudent(int studentId) {
-        for (Student s : Main.students) {
+        for (Student s : EnglishSchool.students) {
             if (s.getId() == studentId) {
                 return s;
             }
@@ -154,18 +154,18 @@ public class StaffMenu {
     }
 
     public static void addPoints() {
-        System.out.println(Main.LINE);
+        System.out.println(EnglishSchool.LINE);
         System.out.print("生徒ID: ");
-        int id = Integer.parseInt(Main.sc.nextLine());
+        int id = Integer.parseInt(EnglishSchool.sc.nextLine());
 
-        for (Student s : Main.students) {
+        for (Student s : EnglishSchool.students) {
             if (s.getId() == id) {
                 if (!"在籍".equals(s.getStatus())) {
                     System.out.println("在籍中の生徒が見つかりません。");
                     return;
                 }
                 System.out.print("追加ポイント（200単位）: ");
-                int p = Integer.parseInt(Main.sc.nextLine());
+                int p = Integer.parseInt(EnglishSchool.sc.nextLine());
 
                 if (s.addPoints(p)) {
                     System.out.println("ポイント追加完了");
@@ -179,11 +179,11 @@ public class StaffMenu {
     }
 
     public static void reserveLesson() {
-        System.out.println(Main.LINE);
-        int lessonId = Main.lessons.size()+1;
+        System.out.println(EnglishSchool.LINE);
+        int lessonId = EnglishSchool.lessons.size()+1;
 
         System.out.print("生徒ID: ");
-        int studentId = Integer.parseInt(Main.sc.nextLine());
+        int studentId = Integer.parseInt(EnglishSchool.sc.nextLine());
         Student student = findStudent(studentId);
         if (student == null || !"在籍".equals(student.getStatus())) {
             System.out.println("在籍中の生徒が見つかりません。");
@@ -191,7 +191,7 @@ public class StaffMenu {
         }
 
         System.out.print("講師ID: ");
-        int teacherId = Integer.parseInt(Main.sc.nextLine());
+        int teacherId = Integer.parseInt(EnglishSchool.sc.nextLine());
 
         String lessonType = CourseUtil.SelectLessonType();
 
@@ -201,7 +201,7 @@ public class StaffMenu {
         }
 
         System.out.print("日時 (例: 2026-02-01 18:00): ");
-        String input = Main.sc.nextLine();
+        String input = EnglishSchool.sc.nextLine();
         LocalDateTime dateTime;
         try {
             dateTime = DateTimeUtil.parse(input);
@@ -215,14 +215,14 @@ public class StaffMenu {
         }
 
         Lesson l = new Lesson(lessonId, studentId, teacherId, lessonType, DateTimeUtil.format(dateTime));
-        Main.lessons.add(l);
+        EnglishSchool.lessons.add(l);
 
         System.out.println("レッスンを予約しました。");
     }
 
     public static void viewLessons() {
-        System.out.println(Main.LINE);
-        for (Lesson l : Main.lessons) {
+        System.out.println(EnglishSchool.LINE);
+        for (Lesson l : EnglishSchool.lessons) {
             if (!"取消".equals(l.getStatus())) {
                 System.out.println(
                         "レッスンID=" + l.getLessonId() +
@@ -236,11 +236,11 @@ public class StaffMenu {
     }
 
     public static void cancelLesson() {
-        System.out.println(Main.LINE);
+        System.out.println(EnglishSchool.LINE);
         System.out.print("取消するレッスンID: ");
-        int lessonId = Integer.parseInt(Main.sc.nextLine());
+        int lessonId = Integer.parseInt(EnglishSchool.sc.nextLine());
 
-        for (Lesson l : Main.lessons) {
+        for (Lesson l : EnglishSchool.lessons) {
             if (l.getLessonId() == lessonId) {
                 if ("取消".equals(l.getStatus())) {
                     System.out.println("すでに取消済みです。");
@@ -255,21 +255,21 @@ public class StaffMenu {
     }
 
     public static void addTeacher() {
-        System.out.println(Main.LINE);
-        int id = Main.teachers.size() + 1;
+        System.out.println(EnglishSchool.LINE);
+        int id = EnglishSchool.teachers.size() + 1;
 
         System.out.print("講師名: ");
-        String name = Main.sc.nextLine();
+        String name = EnglishSchool.sc.nextLine();
 
         Teacher t = new Teacher(id, name);
-        Main.teachers.add(t);
+        EnglishSchool.teachers.add(t);
         System.out.println("講師を登録しました。");
     }
 
     public static void viewTeachers() {
-        System.out.println(Main.LINE);
+        System.out.println(EnglishSchool.LINE);
         System.out.println("\n------ 講師一覧 ------");
-        for (Teacher t : Main.teachers) {
+        for (Teacher t : EnglishSchool.teachers) {
             System.out.println(
                     "ID=" + t.getId() +
                             " 名前=" + t.getName()
@@ -284,7 +284,7 @@ public class StaffMenu {
     }
 
     public static void changeLessonCost(){
-        System.out.println(Main.LINE);
+        System.out.println(EnglishSchool.LINE);
         viewLessonCost();
         while(true){
             try{
@@ -294,7 +294,7 @@ public class StaffMenu {
            2. いいえ
            
     番号を入力してください>>> """);
-                switch (Integer.parseInt(Main.sc.nextLine())){
+                switch (Integer.parseInt(EnglishSchool.sc.nextLine())){
                     case 1 -> LessonCost.changeCost();
                     case 2 -> {
                         return;
@@ -309,11 +309,11 @@ public class StaffMenu {
 
     }
     public static void viewProfit() {
-        System.out.println(Main.LINE);
-        int totalPointsUsed = Main.lessons.size() * LessonCost.getLessonCost();
+        System.out.println(EnglishSchool.LINE);
+        int totalPointsUsed = EnglishSchool.lessons.size() * LessonCost.getLessonCost();
         int totalProfitYen = totalPointsUsed * LessonCost.getPointValue();
 
-        System.out.println(Main.LINE);
+        System.out.println(EnglishSchool.LINE);
         System.out.println("ポイント合計=" + totalPointsUsed);
         System.out.println("売上=" + totalProfitYen + "円");
     }

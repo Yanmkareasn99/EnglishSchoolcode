@@ -2,7 +2,7 @@ public class StudentMenu {
     public static void showMenu() {
         while (true) {
             try {
-                System.out.println(Main.LINE);
+                System.out.println(EnglishSchool.LINE);
                 System.out.print("""
                         
                         1: 生徒情報確認
@@ -11,7 +11,7 @@ public class StudentMenu {
                         0: 戻る
                         
                         番号を入力してください>>> """);
-                int choice = Integer.parseInt(Main.sc.nextLine());
+                int choice = Integer.parseInt(EnglishSchool.sc.nextLine());
                 switch (choice) {
                     case 1 -> viewStudent();
                     case 2 -> StaffMenu.reserveLesson();
@@ -26,11 +26,11 @@ public class StudentMenu {
     }
 
     public static void viewStudent() {
-        System.out.println(Main.LINE);
+        System.out.println(EnglishSchool.LINE);
         System.out.print("生徒ID: ");
-        int id = Integer.parseInt(Main.sc.nextLine());
+        int id = Integer.parseInt(EnglishSchool.sc.nextLine());
 
-        for (Student s : Main.students) {
+        for (Student s : EnglishSchool.students) {
             if (s.getId() == id) {
                 System.out.println(
                         "ID=" + s.getId() +
@@ -47,11 +47,11 @@ public class StudentMenu {
     }
 
     public static void viewLessons() {
-        System.out.println(Main.LINE);
+        System.out.println(EnglishSchool.LINE);
         System.out.print("生徒ID: ");
-        int studentID = Integer.parseInt(Main.sc.nextLine());
+        int studentID = Integer.parseInt(EnglishSchool.sc.nextLine());
         boolean found = false;
-        for (Lesson l : Main.lessons) {
+        for (Lesson l : EnglishSchool.lessons) {
             if (l.getStudentId() == studentID && !"取消".equals(l.getStatus())) {
                 System.out.println(
                         "レッスンID=" + l.getLessonId() +

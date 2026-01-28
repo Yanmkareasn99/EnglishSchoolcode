@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Main{
+public class EnglishSchool {
     public static List<Student> students = new ArrayList<>();
     public static List<Teacher> teachers = new ArrayList<>();
     public static List<Lesson> lessons = new ArrayList<>();

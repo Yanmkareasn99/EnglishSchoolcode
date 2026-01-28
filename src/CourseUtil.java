@@ -27,7 +27,7 @@ public class CourseUtil {
                     """);
             System.out.print("番号: ");
             try {
-                int choice = Integer.parseInt(Main.sc.nextLine());
+                int choice = Integer.parseInt(EnglishSchool.sc.nextLine());
                 switch (choice) {
                     case 1 -> { return 0; }
                     case 2 -> { return 1; }
@@ -51,7 +51,7 @@ public class CourseUtil {
                     """);
             System.out.print("番号: ");
             try {
-                int choice = Integer.parseInt(Main.sc.nextLine());
+                int choice = Integer.parseInt(EnglishSchool.sc.nextLine());
                 switch (choice) {
                     case 1 -> { return 0; }
                     case 2 -> { return 1; }
@@ -73,7 +73,7 @@ public class CourseUtil {
                     """);
             System.out.print("番号: ");
             try {
-                int choice = Integer.parseInt(Main.sc.nextLine());
+                int choice = Integer.parseInt(EnglishSchool.sc.nextLine());
                 switch (choice) {
                     case 1 -> { return true; }
                     case 2 -> { return false; }
@@ -95,7 +95,7 @@ public class CourseUtil {
                     2. マンツーマン
                     番号を入力してください>>> """);
             try {
-                int choice = Integer.parseInt(Main.sc.nextLine());
+                int choice = Integer.parseInt(EnglishSchool.sc.nextLine());
                 switch (choice) {
                     case 1 -> { return("グループレッスン"); }
                     case 2 -> { return("マンツーマン"); }

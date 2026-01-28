@@ -2,7 +2,7 @@ public class TeacherMenu {
     public static void showMenu() {
         while (true) {
             try {
-                System.out.println(Main.LINE);
+                System.out.println(EnglishSchool.LINE);
                 System.out.print("""
                         
                         1: レッスン一覧
@@ -10,7 +10,7 @@ public class TeacherMenu {
                         0: 戻る
                         
                         番号を入力してください>>> """);
-                int choice = Integer.parseInt(Main.sc.nextLine());
+                int choice = Integer.parseInt(EnglishSchool.sc.nextLine());
                 switch (choice) {
                     case 1 -> viewLessons();
                     case 2 -> recordAttendance();
@@ -24,12 +24,12 @@ public class TeacherMenu {
     }
 
     public static void viewLessons() {
-        System.out.println(Main.LINE);
+        System.out.println(EnglishSchool.LINE);
         System.out.print("講師ID: ");
-        int teacherId = Integer.parseInt(Main.sc.nextLine());
+        int teacherId = Integer.parseInt(EnglishSchool.sc.nextLine());
 
         boolean found = false;
-        for (Lesson l : Main.lessons) {
+        for (Lesson l : EnglishSchool.lessons) {
             if (l.getTeacherId() == teacherId && !"取消".equals(l.getStatus())) {
                 System.out.println(
                         "レッスンID=" + l.getLessonId() +
@@ -46,11 +46,11 @@ public class TeacherMenu {
     }
 
     public static void recordAttendance() {
-        System.out.println(Main.LINE);
+        System.out.println(EnglishSchool.LINE);
         System.out.print("レッスンID: ");
-        int lessonId = Integer.parseInt(Main.sc.nextLine());
+        int lessonId = Integer.parseInt(EnglishSchool.sc.nextLine());
 
-        for (Lesson l : Main.lessons) {
+        for (Lesson l : EnglishSchool.lessons) {
             if (l.getLessonId() == lessonId) {
                 Student student = findStudent(l.getStudentId());
                 if (student != null) {
