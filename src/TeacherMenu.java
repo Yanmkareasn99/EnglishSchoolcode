@@ -87,7 +87,7 @@ public class TeacherMenu {
                 return;
             }
         }
-        System.out.println("レッスンが見つかりません。");
+        System.out.println("レッスンが見つかりません。"); 
     }
 
 }
