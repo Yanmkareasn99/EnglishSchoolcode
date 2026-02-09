@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public class StaffMenu {
 
-    public static void showMenu() {
+    public static void showMenu() { 
         while (true) {
             Design.clearScreen();
             System.out.println(Design.LINE);
