@@ -1,4 +1,4 @@
-public class AddPoint {
+public class UCAddPoint {
 
     public static void execute() {
         System.out.println(Design.LINE);
@@ -15,7 +15,7 @@ public class AddPoint {
                 System.out.print("追加ポイント（200単位）: ");
                 int p = Integer.parseInt(EnglishSchool.sc.nextLine());
 
-                if (s.addPoints(p)) {
+                if (s.setpoint(p)) {
                     System.out.println("ポイント追加完了");
                 } else {
                     System.out.println("200単位で入力してください");

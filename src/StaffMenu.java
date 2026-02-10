@@ -28,7 +28,7 @@ public class StaffMenu {
                         case 1 -> AddStudent.execute();
                         case 2 -> ViewStudent.execute();
                         case 3 -> ChangeStudent.execute();
-                        case 4 -> AddPoint.execute();
+                        case 4 -> UCAddPoint.execute();
                         case 5 -> BookLesson.execute();
                         case 6 -> ViewLesson.execute();
                         case 7 -> CancelLesson.execute();

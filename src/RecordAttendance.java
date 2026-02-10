@@ -1,7 +1,4 @@
     public class RecordAttendance {
-    public static void main(String[] args) {
-        execute();
-    }
 
     public static void execute() {
         System.out.println(Design.LINE);

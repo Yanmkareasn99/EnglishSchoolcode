@@ -63,7 +63,7 @@ public class BookLesson {
     番号を入力してください>>> """);
                     switch (Integer.parseInt(EnglishSchool.sc.nextLine())){
                         case 1 -> {
-                            AddPoint.execute();
+                            UCAddPoint.execute();
                             return;
                         }
                         case 2 -> {
@@ -90,7 +90,11 @@ public class BookLesson {
         Student student = FindUtil.findStudent(studentId);
         System.out.print("講師ID: ");
         int teacherId = Integer.parseInt(EnglishSchool.sc.nextLine());
-
+        Teacher currentTeacher = FindUtil.findTeacher(teacherId);
+        if (currentTeacher == null) {
+            System.out.println("先生が見つかりません");
+            return;
+        }
         String lessonType = CourseUtil.SelectLessonType();
 
         System.out.print("日時 (例: 2026-02-01 18): ");
@@ -121,7 +125,12 @@ public class BookLesson {
             }
         }
 
-        if (student == null || !student.consumePoints(LessonCost.getLessonCost())) {
+        if (student == null || !"在籍".equals(student.getStatus())) {
+            System.out.println("在籍中の生徒が見つかりません。");
+            return;
+        }
+
+        if (!student.consumePoints(LessonCost.getLessonCost())) {
             System.out.println("ポイントが不足しています。");
             return;
         }

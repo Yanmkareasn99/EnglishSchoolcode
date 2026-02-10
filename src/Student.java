@@ -56,7 +56,7 @@ public class Student {
     public void setRegisterDate(LocalDate registerDate) { this.registerDate = registerDate; }
 
     //+200 increments only
-    public boolean addPoints(int p) {
+    public boolean setpoint(int p) {
         if (p % 200 != 0) {
             return false;
         }
@@ -78,6 +78,7 @@ public class Student {
     }
 
     public String toCsv() {
+        normalizePoints(LocalDateTime.now());
         return id + "," + name + "," + age + "," + sex + "," +
                 phone + "," + email + "," + points + "," +
                 course + "," + lesson + "," + status + "," + address + "," +
