@@ -47,6 +47,7 @@ public class EnglishSchool {
                             CsvUtil.saveTeachers(teachers);
                             CsvUtil.saveLessons(lessons);
                             System.out.println("保存が終了しました。");
+                            sc.close();
                             return;
                         }
                         default -> {
