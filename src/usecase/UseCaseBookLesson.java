@@ -4,7 +4,7 @@ public class UseCaseBookLesson {
     public static void execute() {
         System.out.println(Design.LINE);
         UseCaseViewStudent.execute();
-        int lessonId = EnglishSchool.lessons.size()+1;
+        int lessonId = SchoolData.lessons.size()+1;
         System.out.print("生徒ID: ");
         int studentId = Integer.parseInt(EnglishSchool.sc.nextLine());
         Student student = FindUtil.findStudent(studentId);
@@ -37,7 +37,7 @@ public class UseCaseBookLesson {
         }
 
         String formattedDateTime = DateTimeUtil.format(dateTime);
-        for(Lesson l : EnglishSchool.lessons){
+        for(Lesson l : SchoolData.lessons){
             if(!"取消".equals(l.getStatus()) && formattedDateTime.equals(l.getDateTime())){
                 if(l.getTeacherId() == teacherId){
                     System.out.println("講師はその時間に予約があります。");
@@ -77,7 +77,7 @@ public class UseCaseBookLesson {
         }
 
         Lesson l = new Lesson(lessonId, studentId, teacherId, lessonType, DateTimeUtil.format(dateTime));
-        EnglishSchool.lessons.add(l);
+        SchoolData.lessons.add(l);
 
         System.out.println("レッスンを予約しました。");
     }
@@ -85,7 +85,7 @@ public class UseCaseBookLesson {
         public static void execute(int studentId) {
         System.out.println(Design.LINE);
 
-        int lessonId = EnglishSchool.lessons.size()+1;
+        int lessonId = SchoolData.lessons.size()+1;
         Student student = FindUtil.findStudent(studentId);
         System.out.print("講師ID: ");
         int teacherId = Integer.parseInt(EnglishSchool.sc.nextLine());
@@ -111,7 +111,7 @@ public class UseCaseBookLesson {
         }
 
         String formattedDateTime = DateTimeUtil.format(dateTime);
-        for(Lesson l : EnglishSchool.lessons){
+        for(Lesson l : SchoolData.lessons){
             if(!"取消".equals(l.getStatus()) && formattedDateTime.equals(l.getDateTime())){
                 if(l.getTeacherId() == teacherId){
                     System.out.println("講師はその時間に予約があります。");
@@ -135,7 +135,7 @@ public class UseCaseBookLesson {
         }
 
         Lesson l = new Lesson(lessonId, studentId, teacherId, lessonType, DateTimeUtil.format(dateTime));
-        EnglishSchool.lessons.add(l);
+        SchoolData.lessons.add(l);
 
         System.out.println("レッスンを予約しました。");
     }
