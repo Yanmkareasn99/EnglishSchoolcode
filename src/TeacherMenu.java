@@ -31,8 +31,8 @@ public class TeacherMenu {
                     try {
                         int choice = Integer.parseInt(EnglishSchool.sc.nextLine());
                         switch (choice) {
-                            case 1 -> viewLessons(teacherId);
-                            case 2 -> recordAttendance();
+                            case 1 -> ViewLesson.executeTeacher(teacherId);
+                            case 2 -> RecordAttendance.execute();
                             case 0 -> { return; }
                             default -> {
                                 System.out.println("無効な入力です。");
@@ -46,48 +46,6 @@ public class TeacherMenu {
                 }
             }
         }
-    }
-
-
-    public static void viewLessons(int teacherId) {
-        System.out.println(Design.LINE);
-
-        boolean found = false;
-        for (Lesson l : EnglishSchool.lessons) {
-            if (!"取消".equals(l.getStatus())) {
-                System.out.println(
-                        "レッスンID=" + l.getLessonId() +
-                                " 生徒ID=" + l.getStudentId() +
-                                " レッスンタイプ=" + l.getLessonType() +
-                                " 日時=" + l.getDateTime()
-                );
-                found = true;
-            }
-        }
-        if (!found) {
-            System.out.println("該当レッスンがありません。");
-        }
-    }
-
-    public static void recordAttendance() {
-        System.out.println(Design.LINE);
-        System.out.print("レッスンID: ");
-        int lessonId = Integer.parseInt(EnglishSchool.sc.nextLine());
-
-        for (Lesson l : EnglishSchool.lessons) {
-            if (l.getLessonId() == lessonId) {
-                Student student = StaffMenu.findStudent(l.getStudentId());
-                if (student != null) {
-                    String summary = l.getDateTime() + " " + l.getLessonType();
-                    student.setLesson(summary);
-                    System.out.println("出席を登録しました。");
-                } else {
-                    System.out.println("生徒が見つかりません。");
-                }
-                return;
-            }
-        }
-        System.out.println("レッスンが見つかりません。"); 
     }
 
 }
