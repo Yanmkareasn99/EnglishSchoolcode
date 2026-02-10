@@ -1,4 +1,4 @@
-public class ViewProfit {
+public class UseCaseViewProfit {
         public static void execute() {
 
         System.out.println(Design.LINE);

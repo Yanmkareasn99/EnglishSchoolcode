@@ -1,4 +1,4 @@
-public class CancelLesson {
+public class UseCaseCancelLesson {
         public static void execute() {
         System.out.println(Design.LINE);
         System.out.print("取消するレッスンID: ");

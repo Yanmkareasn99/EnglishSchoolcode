@@ -1,7 +1,7 @@
-public class ChangeLessonCost {
+public class UseCaseChangeLessonCost {
     public static void execute(){
         System.out.println(Design.LINE);
-        ViewLessonCost.execute();
+        UseCaseViewLessonCost.execute();
         while(true){
             try{
                 System.out.println("""

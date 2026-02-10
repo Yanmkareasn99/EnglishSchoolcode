@@ -1,9 +1,9 @@
 import java.time.LocalDateTime;
 
-public class BookLesson {
+public class UseCaseBookLesson {
     public static void execute() {
         System.out.println(Design.LINE);
-        ViewStudent.execute();
+        UseCaseViewStudent.execute();
         int lessonId = EnglishSchool.lessons.size()+1;
         System.out.print("生徒ID: ");
         int studentId = Integer.parseInt(EnglishSchool.sc.nextLine());
@@ -12,8 +12,7 @@ public class BookLesson {
             System.out.println("在籍中の生徒が見つかりません。");
             return;
         }
-        ViewTeacher.execute();
-
+        UseCaseViewTeacher.execute();
         System.out.print("講師ID: ");
         int teacherId = Integer.parseInt(EnglishSchool.sc.nextLine());
         Teacher currentTeacher = FindUtil.findTeacher(teacherId);
@@ -63,7 +62,7 @@ public class BookLesson {
     番号を入力してください>>> """);
                     switch (Integer.parseInt(EnglishSchool.sc.nextLine())){
                         case 1 -> {
-                            UCAddPoint.execute();
+                            UseCaseAddPoint.execute();
                             return;
                         }
                         case 2 -> {

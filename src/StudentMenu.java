@@ -32,9 +32,9 @@ public class StudentMenu {
                 try {
                     int choice = Integer.parseInt(EnglishSchool.sc.nextLine());
                     switch (choice) {
-                        case 1 -> ViewStudent.execute(studentId);
-                        case 2 -> BookLesson.execute(studentId);
-                        case 3 -> ViewLesson.executeStudent(studentId);
+                        case 1 -> UseCaseViewStudent.execute(studentId);
+                        case 2 -> UseCaseBookLesson.execute(studentId);
+                        case 3 -> UseCaseViewLesson.executeStudent(studentId);
                         case 0 -> { return; }
                         default -> {
                             System.out.println("無効な入力です。");

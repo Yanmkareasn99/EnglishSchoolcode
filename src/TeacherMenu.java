@@ -31,8 +31,8 @@ public class TeacherMenu {
                     try {
                         int choice = Integer.parseInt(EnglishSchool.sc.nextLine());
                         switch (choice) {
-                            case 1 -> ViewLesson.executeTeacher(teacherId);
-                            case 2 -> RecordAttendance.execute();
+                            case 1 -> UseCaseViewLesson.executeTeacher(teacherId);
+                            case 2 -> UseCaseRecordAttendance.execute();
                             case 0 -> { return; }
                             default -> {
                                 System.out.println("無効な入力です。");

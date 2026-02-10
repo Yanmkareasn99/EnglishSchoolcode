@@ -1,8 +1,8 @@
-public class UCAddPoint {
+public class UseCaseAddPoint {
 
     public static void execute() {
         System.out.println(Design.LINE);
-        ViewStudent.execute();
+        UseCaseViewStudent.execute();
         System.out.print("生徒ID: ");
         int id = Integer.parseInt(EnglishSchool.sc.nextLine());
 

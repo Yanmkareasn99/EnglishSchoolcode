@@ -1,4 +1,4 @@
-public class ViewLesson {
+public class UseCaseViewLesson {
         public static void execute() {
         System.out.println(Design.LINE);
         for (Lesson l : EnglishSchool.lessons) {
