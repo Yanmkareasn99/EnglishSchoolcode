@@ -2,7 +2,7 @@ public class UseCaseViewStudent {
         public static void execute() {
         System.out.println(Design.LINE);
         System.out.println("\n------ 生徒一覧 ------");
-        for (Student s : EnglishSchool.students) {
+        for (Student s : SchoolData.students) {
             if (!"在籍".equals(s.getStatus())) {
                 continue;
             }
@@ -18,7 +18,7 @@ public class UseCaseViewStudent {
 
         public static void execute(int studentId) {
         System.out.println(Design.LINE);
-        for (Student s : EnglishSchool.students) {
+        for (Student s : SchoolData.students) {
             if (s.getId() == studentId) {
                 System.out.println(
                         "ID=" + s.getId() +

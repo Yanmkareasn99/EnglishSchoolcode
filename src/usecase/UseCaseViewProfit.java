@@ -7,7 +7,7 @@ public class UseCaseViewProfit {
 //                lessonCount++;
 //            }
 //        }
-        int lessonCount = EnglishSchool.lessons.size();
+        int lessonCount = SchoolData.lessons.size();
         int totalPointsUsed = lessonCount * LessonCost.getLessonCost();
         int totalProfit = totalPointsUsed * LessonCost.getPointValue();
         System.out.println(Design.LINE);

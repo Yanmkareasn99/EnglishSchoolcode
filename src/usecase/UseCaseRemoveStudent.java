@@ -4,7 +4,7 @@ public class UseCaseRemoveStudent {
         System.out.print("退会する生徒ID: ");
         int id = Integer.parseInt(EnglishSchool.sc.nextLine());
 
-        for (Student s : EnglishSchool.students) {
+        for (Student s : SchoolData.students) {
             if (s.getId() == id) {
                 if (!"在籍".equals(s.getStatus())) {
                     System.out.println("すでに退学済みです。");

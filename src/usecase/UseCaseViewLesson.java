@@ -1,7 +1,7 @@
 public class UseCaseViewLesson {
         public static void execute() {
         System.out.println(Design.LINE);
-        for (Lesson l : EnglishSchool.lessons) {
+        for (Lesson l : SchoolData.lessons) {
             if (!"取消".equals(l.getStatus())) {
                 System.out.println(
                         "レッスンID=" + l.getLessonId() +
@@ -17,7 +17,7 @@ public class UseCaseViewLesson {
         public static void executeStudent(int studentId) {
         System.out.println(Design.LINE);
         boolean found = false;
-        for (Lesson l : EnglishSchool.lessons) {
+        for (Lesson l : SchoolData.lessons) {
             if (l.getStudentId() == studentId && !"取消".equals(l.getStatus())) {
                 System.out.println(
                         "レッスンID=" + l.getLessonId() +
@@ -37,7 +37,7 @@ public class UseCaseViewLesson {
         System.out.println(Design.LINE);
 
         boolean found = false;
-        for (Lesson l : EnglishSchool.lessons) {
+        for (Lesson l : SchoolData.lessons) {
             if (l.getTeacherId() == teacherId && !"取消".equals(l.getStatus())) {
                 System.out.println(
                         "レッスンID=" + l.getLessonId() +

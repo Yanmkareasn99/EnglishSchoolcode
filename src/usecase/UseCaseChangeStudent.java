@@ -4,7 +4,7 @@ public class UseCaseChangeStudent {
         System.out.print("変更する生徒ID: ");
         int id = Integer.parseInt(EnglishSchool.sc.nextLine());
 
-        for (Student s : EnglishSchool.students) {
+        for (Student s : SchoolData.students) {
             if (s.getId() == id) {
                 if (!"在籍".equals(s.getStatus())) {
                     System.out.println("在籍中の生徒が見つかりません。");
