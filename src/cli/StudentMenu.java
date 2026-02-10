@@ -42,7 +42,7 @@ public class StudentMenu {
                         }
                     }
                     break;
-                } catch (NumberFormatException e) {
+                } catch (Exception e) {
                     System.out.println("数字を入力してください。");
                 }
             }
