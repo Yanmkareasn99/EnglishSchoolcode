@@ -11,7 +11,7 @@ public class TeacherMenu {
                 System.out.println("数字を入力してください！！！");
                 continue;
             }
-            Teacher currentTeacher = Student.findTeacher(teacherId);
+            Teacher currentTeacher = FindUtil.findTeacher(teacherId);
             if (currentTeacher == null) {
                 System.out.println("先生が見つかりません");
                 continue;

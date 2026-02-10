@@ -21,7 +21,7 @@ public class ViewLesson {
             if (l.getStudentId() == studentId && !"取消".equals(l.getStatus())) {
                 System.out.println(
                         "レッスンID=" + l.getLessonId() +
-                                " 講師=" + Student.getTeacherName(l.getTeacherId()) +
+                                " 講師=" + Teacher.getTeacherName(l.getTeacherId()) +
                                 " レッスンタイプ=" + l.getLessonType() +
                                 " 日時=" + l.getDateTime() + "時"
                 );
