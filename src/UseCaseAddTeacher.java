@@ -1,4 +1,4 @@
-public class AddTeacher {
+public class UseCaseAddTeacher {
     public static void execute() {
         System.out.println(Design.LINE);
         int id = EnglishSchool.teachers.size() + 1;

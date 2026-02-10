@@ -1,4 +1,4 @@
-    public class RecordAttendance {
+    public class UseCaseRecordAttendance {
 
     public static void execute() {
         System.out.println(Design.LINE);

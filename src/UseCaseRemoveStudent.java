@@ -1,4 +1,4 @@
-public class RemoveStudent {
+public class UseCaseRemoveStudent {
         public static void execute() {
         System.out.println(Design.LINE);
         System.out.print("退会する生徒ID: ");

@@ -1,4 +1,4 @@
-public class ViewTeacher {
+public class UseCaseViewTeacher {
         public static void execute() {
         System.out.println(Design.LINE);
         System.out.println("\n------ 講師一覧 ------");

@@ -25,18 +25,18 @@ public class StaffMenu {
                 try {
                     int choice = Integer.parseInt(EnglishSchool.sc.nextLine());
                     switch (choice) {
-                        case 1 -> AddStudent.execute();
-                        case 2 -> ViewStudent.execute();
-                        case 3 -> ChangeStudent.execute();
-                        case 4 -> UCAddPoint.execute();
-                        case 5 -> BookLesson.execute();
-                        case 6 -> ViewLesson.execute();
-                        case 7 -> CancelLesson.execute();
-                        case 8 -> ChangeLessonCost.execute();
-                        case 9 -> AddTeacher.execute();
-                        case 10 -> ViewTeacher.execute();
-                        case 11 -> RemoveStudent.execute();
-                        case 12 -> ViewProfit.execute();
+                        case 1 -> UseCaseAddStudent.execute();
+                        case 2 -> UseCaseViewStudent.execute();
+                        case 3 -> UseCaseChangeStudent.execute();
+                        case 4 -> UseCaseAddPoint.execute();
+                        case 5 -> UseCaseBookLesson.execute();
+                        case 6 -> UseCaseViewLesson.execute();
+                        case 7 -> UseCaseCancelLesson.execute();
+                        case 8 -> UseCaseChangeLessonCost.execute();
+                        case 9 -> UseCaseAddTeacher.execute();
+                        case 10 -> UseCaseViewTeacher.execute();
+                        case 11 -> UseCaseRemoveStudent.execute();
+                        case 12 -> UseCaseViewProfit.execute();
                         case 0 -> { return; }
                         default -> {
                             System.out.println("無効な入力です。");

@@ -1,6 +1,6 @@
 import java.time.LocalDate;
 
-public class AddStudent {
+public class UseCaseAddStudent {
 
     public static void execute() {
         System.out.println(Design.LINE);

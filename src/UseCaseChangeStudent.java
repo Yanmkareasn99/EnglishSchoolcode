@@ -1,4 +1,4 @@
-public class ChangeStudent {
+public class UseCaseChangeStudent {
         public static void execute() {
         System.out.println(Design.LINE);
         System.out.print("変更する生徒ID: ");
