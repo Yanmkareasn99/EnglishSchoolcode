@@ -4,7 +4,7 @@ public class UseCaseCancelLesson {
         System.out.print("取消するレッスンID: ");
         int lessonId = Integer.parseInt(EnglishSchool.sc.nextLine());
 
-        for (Lesson l : EnglishSchool.lessons) {
+        for (Lesson l : SchoolData.lessons) {
             if (l.getLessonId() == lessonId) {
                 if ("取消".equals(l.getStatus())) {
                     System.out.println("すでに取消済みです。");

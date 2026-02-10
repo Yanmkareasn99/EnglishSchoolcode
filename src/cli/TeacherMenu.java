@@ -40,7 +40,7 @@ public class TeacherMenu {
                             }
                         }
                         break;
-                    } catch (Exception e) {
+                    } catch (NumberFormatException e) {
                         System.out.println("数字を入力してください。");
                     }
                 }

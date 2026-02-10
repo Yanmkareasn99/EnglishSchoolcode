@@ -5,7 +5,7 @@
         System.out.print("レッスンID: ");
         int lessonId = Integer.parseInt(EnglishSchool.sc.nextLine());
 
-        for (Lesson l : EnglishSchool.lessons) {
+        for (Lesson l : SchoolData.lessons) {
             if (l.getLessonId() == lessonId) {
                 Student student = FindUtil.findStudent(l.getStudentId());
                 if (student != null) {

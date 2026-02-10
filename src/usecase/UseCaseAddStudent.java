@@ -4,7 +4,7 @@ public class UseCaseAddStudent {
 
     public static void execute() {
         System.out.println(Design.LINE);
-        int id = EnglishSchool.students.size()+1;
+        int id = SchoolData.students.size()+1;
 
         System.out.print("名前: ");
         String name = EnglishSchool.sc.nextLine();
@@ -30,7 +30,7 @@ public class UseCaseAddStudent {
         );
         s.setRegisterDate(LocalDate.now());
 
-        EnglishSchool.students.add(s);
+        SchoolData.students.add(s);
         System.out.println("生徒を登録しました。");
     }
 }
