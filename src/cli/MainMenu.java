@@ -1,5 +1,5 @@
 public class MainMenu {
-    public static void showMenu() {
+    public static void showMenu(){
 
     while (true){
             System.out.println(Design.LINE);
