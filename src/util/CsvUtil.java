@@ -47,33 +47,18 @@ public class CsvUtil {
         }
     }
 
-    public static void saveLessonCost(int pointValue, int lessonCost) {
+    public static void saveLessonCost(List<LessonCost> lessonCosts) {
         try (FileWriter fw = new FileWriter("lesson_cost.csv")) {
             fw.write("pointValue,lessonCost\n");
-            fw.write(pointValue + "," + lessonCost + "\n");
+            for (LessonCost lc : lessonCosts) {
+                fw.write(lc.toCsv() + "\n");
+            }
         } catch (Exception e) {
             System.out.println("単価CSV保存エラー");
         }
     }
 
-    public static int[] loadLessonCost() {
-        try (FileReader fr = new FileReader("lesson_cost.csv");
-             BufferedReader br = new BufferedReader(fr)) {
 
-            String line = br.readLine();
-            line = br.readLine();
-            if (line == null || line.isEmpty()) {
-                return null;
-            }
-            String[] d = line.split(",");
-            if (d.length < 2) {
-                return null;
-            }
-            return new int[]{Integer.parseInt(d[0]), Integer.parseInt(d[1])};
-        } catch (Exception e) {
-            return null;
-        }
-    }
 
 //    public static void saveProfits(List<Profit> profits) {
 //        try (FileWriter fw = new FileWriter("profits.csv")) {
@@ -88,6 +73,28 @@ public class CsvUtil {
 //            System.out.println("売上CSV保存エラー");
 //        }
 //    }
+
+    public static void loadLessonCost(List<LessonCost> lessonCosts) {
+        try (FileReader fr = new FileReader("lesson_cost.csv");
+             BufferedReader br = new BufferedReader(fr)) {
+
+            String line = br.readLine();
+
+            while ((line = br.readLine()) != null) {
+                String[] d = line.split(",");
+
+                LessonCost lc = new LessonCost(
+                        Integer.parseInt(d[0]), // pointValue
+                        Integer.parseInt(d[1])  // LessonCost
+                );
+
+                lessonCosts.add(lc);
+            }
+
+        } catch (Exception e) {
+            System.out.println("CSVがないです。");
+        }
+    }
 
     public static void loadStudents(List<Student> students) {
         try (FileReader fr = new FileReader("students.csv");

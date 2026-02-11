@@ -33,6 +33,7 @@ public class MainMenu {
                             CsvUtil.saveStudents(SchoolData.students);
                             CsvUtil.saveTeachers(SchoolData.teachers);
                             CsvUtil.saveLessons(SchoolData.lessons);
+                            CsvUtil.saveLessonCost(SchoolData.lessonCosts);
                             System.out.println("保存が終了しました。");
                             EnglishSchool.sc.close();
                             return;

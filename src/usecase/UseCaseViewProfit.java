@@ -8,8 +8,8 @@ public class UseCaseViewProfit {
 //            }
 //        }
         int lessonCount = SchoolData.lessons.size();
-        int totalPointsUsed = lessonCount * LessonCost.getLessonCost();
-        int totalProfit = totalPointsUsed * LessonCost.getPointValue();
+        int totalPointsUsed = lessonCount * SchoolData.lessonCosts.get(0).getLessonCost();
+        int totalProfit = totalPointsUsed * SchoolData.lessonCosts.get(0).getPointValue();
         System.out.println(Design.LINE);
         System.out.println("ポイント合計=" + totalPointsUsed);
         System.out.println("売上=" + totalProfit + "円");

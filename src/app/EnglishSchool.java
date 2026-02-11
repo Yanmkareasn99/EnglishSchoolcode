@@ -9,10 +9,7 @@ public class EnglishSchool {
         CsvUtil.loadStudents(SchoolData.students);
         CsvUtil.loadTeachers(SchoolData.teachers);
         CsvUtil.loadLessons(SchoolData.lessons);
-        int[] lessonCost = CsvUtil.loadLessonCost();
-        if (lessonCost != null) {
-            LessonCost.setCosts(lessonCost[0], lessonCost[1]);
-        }
+        CsvUtil.loadLessonCost(SchoolData.lessonCosts);
         MainMenu.showMenu();
     }
 }

@@ -50,7 +50,7 @@ public class UseCaseBookLesson {
             }
         }
 
-        if (!student.consumePoints(LessonCost.getLessonCost())) {
+        if (!student.consumePoints(SchoolData.lessonCosts.get(0).getLessonCost())) {
             System.out.println("ポイントが不足しています。");
             while(true){
                 try{
@@ -129,7 +129,7 @@ public class UseCaseBookLesson {
             return;
         }
 
-        if (!student.consumePoints(LessonCost.getLessonCost())) {
+        if (!student.consumePoints(SchoolData.lessonCosts.get(0).getLessonCost())) {
             System.out.println("ポイントが不足しています。");
             return;
         }

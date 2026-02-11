@@ -21,7 +21,7 @@ public class UseCaseViewLesson {
             if (l.getStudentId() == studentId && !"取消".equals(l.getStatus())) {
                 System.out.println(
                         "レッスンID=" + l.getLessonId() +
-                                " 講師=" + Teacher.getTeacherName(l.getTeacherId()) +
+                                " 講師=" + FindUtil.findTeacherName(l.getTeacherId()) +
                                 " レッスンタイプ=" + l.getLessonType() +
                                 " 日時=" + l.getDateTime() + "時"
                 );
@@ -42,6 +42,7 @@ public class UseCaseViewLesson {
                 System.out.println(
                         "レッスンID=" + l.getLessonId() +
                                 " 生徒ID=" + l.getStudentId() +
+                                " 生徒名=" + FindUtil.findStudentName(l.getStudentId())+
                                 " レッスンタイプ=" + l.getLessonType() +
                                 " 日時=" + l.getDateTime()
                 );
