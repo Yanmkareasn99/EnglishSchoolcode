@@ -4,7 +4,7 @@ public class UseCaseChangeLessonCost {
         UseCaseViewLessonCost.execute();
         while(true){
             try{
-                System.out.println("""
+                System.out.print("""
             単価を変える
        1. はい
        2. いいえ
@@ -12,7 +12,7 @@ public class UseCaseChangeLessonCost {
     番号を入力してください>>> """);
                 switch (Integer.parseInt(EnglishSchool.sc.nextLine())){
                     case 1 -> {
-                        LessonCost.changeCost();
+                        changeCost();
                         return;
                     }
                     case 2 -> {
@@ -24,5 +24,14 @@ public class UseCaseChangeLessonCost {
                 System.out.println("数字を入力してください！！！");
             }
         }
+    }
+
+        public static void changeCost(){
+        System.out.println(Design.LINE);
+        System.out.print("一ポイントの単価を入力してください>>> ");
+        SchoolData.lessonCosts.get(0).setPointValue(Integer.parseInt(EnglishSchool.sc.nextLine()));
+        System.out.print("レッスン1コマの単価を入力してください>>> ");
+        SchoolData.lessonCosts.get(0).setPerLessonCost(Integer.parseInt(EnglishSchool.sc.nextLine()));
+        System.out.println("単価を変更しました。");
     }
 }

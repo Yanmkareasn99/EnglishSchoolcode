@@ -14,9 +14,4 @@ public class Teacher {
     public String toCsv() {
         return id + "," + name;
     }
-
-    public static String getTeacherName(int teacherId) {
-        Teacher teacher = FindUtil.findTeacher(teacherId);
-        return teacher != null ? teacher.getName() : "";
-    }
 }
