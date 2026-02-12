@@ -77,14 +77,6 @@ public class Student {
         return true;
     }
 
-    public String toCsv() {
-        normalizePoints(LocalDateTime.now());
-        return id + "," + name + "," + age + "," + sex + "," +
-                phone + "," + email + "," + points + "," +
-                course + "," + lesson + "," + status + "," + address + "," +
-                formatPointExpireAt() + "," + formatRegisterDate();
-    }
-
     public boolean isPointsExpired(LocalDateTime now) {
         if (pointExpireAt == null) {
             return false;
@@ -112,5 +104,14 @@ public class Student {
             pointExpireAt = null;
         }
     }
+
+        public String toCsv() {
+        normalizePoints(LocalDateTime.now());
+        return id + "," + name + "," + age + "," + sex + "," +
+                phone + "," + email + "," + points + "," +
+                course + "," + lesson + "," + status + "," + address + "," +
+                formatPointExpireAt() + "," + formatRegisterDate();
+    }
+
 
 }
