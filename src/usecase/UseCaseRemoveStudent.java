@@ -1,3 +1,4 @@
+import java.util.*;
 public class UseCaseRemoveStudent {
     private static final Scanner sc = new Scanner(System.in);
 

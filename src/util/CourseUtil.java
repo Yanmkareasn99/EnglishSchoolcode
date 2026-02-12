@@ -1,3 +1,4 @@
+import java.util.*;
 public class CourseUtil {
     private static final Scanner sc = new Scanner(System.in);
     private static final String[] COURSES = {"日常会話", "留学準備", "ビジネス", "キッズ"};

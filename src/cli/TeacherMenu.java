@@ -1,3 +1,4 @@
+import java.util.*;
 public class TeacherMenu {
     private static final Scanner sc = new Scanner(System.in);
 

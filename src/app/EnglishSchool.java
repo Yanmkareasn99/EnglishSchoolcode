@@ -1,5 +1,3 @@
-import java.util.*;
-
 public class EnglishSchool {
 
     public static final SchoolData schoolData = new SchoolData();

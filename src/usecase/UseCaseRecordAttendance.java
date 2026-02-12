@@ -1,3 +1,4 @@
+import java.util.*;
 public class UseCaseRecordAttendance {
     private static final Scanner sc = new Scanner(System.in);
 
