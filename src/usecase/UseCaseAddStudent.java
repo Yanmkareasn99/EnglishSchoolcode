@@ -1,25 +1,26 @@
 import java.time.LocalDate;
 
 public class UseCaseAddStudent {
+    private static final Scanner sc = new Scanner(System.in);
 
     public static void execute() {
         System.out.println(Design.LINE);
         int id = SchoolData.students.size()+1;
 
         System.out.print("名前: ");
-        String name = EnglishSchool.sc.nextLine();
+        String name = sc.nextLine();
 
         System.out.print("年齢: ");
-        int age = Integer.parseInt(EnglishSchool.sc.nextLine());
+        int age = Integer.parseInt(sc.nextLine());
 
         System.out.print("性別: ");
-        String sex = EnglishSchool.sc.nextLine();
+        String sex = sc.nextLine();
 
         System.out.print("電話番号: ");
-        long phone = Long.parseLong(EnglishSchool.sc.nextLine());
+        long phone = Long.parseLong(sc.nextLine());
 
         System.out.print("Email: ");
-        String email = EnglishSchool.sc.nextLine();
+        String email = sc.nextLine();
 
         String course = CourseUtil.selectCourse();
 

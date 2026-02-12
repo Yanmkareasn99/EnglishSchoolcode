@@ -1,4 +1,6 @@
 public class TeacherMenu {
+    private static final Scanner sc = new Scanner(System.in);
+
     public static void showMenu() {
         int teacherId;
         Design.clearScreen();
@@ -6,7 +8,7 @@ public class TeacherMenu {
         while (true) {
             System.out.print("講師ID: ");
             try {
-                teacherId = Integer.parseInt(EnglishSchool.sc.nextLine());
+                teacherId = Integer.parseInt(sc.nextLine());
             } catch (Exception e) {
                 System.out.println("数字を入力してください！！！");
                 continue;
@@ -29,7 +31,7 @@ public class TeacherMenu {
                 while (true) {
                     System.out.print("番号を入力してください>>> ");
                     try {
-                        int choice = Integer.parseInt(EnglishSchool.sc.nextLine());
+                        int choice = Integer.parseInt(sc.nextLine());
                         switch (choice) {
                             case 1 -> UseCaseViewLesson.executeTeacher(teacherId);
                             case 2 -> UseCaseRecordAttendance.execute();

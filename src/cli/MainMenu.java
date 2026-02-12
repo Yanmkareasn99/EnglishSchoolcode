@@ -1,4 +1,6 @@
 public class MainMenu {
+    private static final Scanner sc = new Scanner(System.in);
+
     public static void showMenu(){
 
     while (true){
@@ -18,7 +20,7 @@ public class MainMenu {
             while (true) {
                 System.out.print("番号を選択してください >>> ");
                 try{
-                    int choice = Integer.parseInt(EnglishSchool.sc.nextLine());
+                    int choice = Integer.parseInt(sc.nextLine());
                     switch (choice){
                         case 1 -> {
                             StudentMenu.showMenu();
@@ -35,7 +37,7 @@ public class MainMenu {
                             CsvUtil.saveLessons(SchoolData.lessons);
                             CsvUtil.saveLessonCost(SchoolData.lessonCosts);
                             System.out.println("保存が終了しました。");
-                            EnglishSchool.sc.close();
+                            sc.close();
                             return;
                         }
                         default -> {

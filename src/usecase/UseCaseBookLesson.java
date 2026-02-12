@@ -1,12 +1,14 @@
 import java.time.LocalDateTime;
 
 public class UseCaseBookLesson {
+    private static final Scanner sc = new Scanner(System.in);
+
     public static void execute() {
         System.out.println(Design.LINE);
         UseCaseViewStudent.execute();
         int lessonId = SchoolData.lessons.size()+1;
         System.out.print("生徒ID: ");
-        int studentId = Integer.parseInt(EnglishSchool.sc.nextLine());
+        int studentId = Integer.parseInt(sc.nextLine());
         Student student = FindUtil.findStudent(studentId);
         if (student == null || !"在籍".equals(student.getStatus())) {
             System.out.println("在籍中の生徒が見つかりません。");
@@ -14,7 +16,7 @@ public class UseCaseBookLesson {
         }
         UseCaseViewTeacher.execute();
         System.out.print("講師ID: ");
-        int teacherId = Integer.parseInt(EnglishSchool.sc.nextLine());
+        int teacherId = Integer.parseInt(sc.nextLine());
         Teacher currentTeacher = FindUtil.findTeacher(teacherId);
         if (currentTeacher == null) {
             System.out.println("先生が見つかりません");
@@ -23,7 +25,7 @@ public class UseCaseBookLesson {
         String lessonType = CourseUtil.SelectLessonType();
 
         System.out.print("日時 (例: 2026-02-01 18): ");
-        String input = EnglishSchool.sc.nextLine();
+        String input = sc.nextLine();
         LocalDateTime dateTime;
         try {
             dateTime = DateTimeUtil.parse(input);
@@ -60,7 +62,7 @@ public class UseCaseBookLesson {
        2. いいえ
            
     番号を入力してください>>> """);
-                    switch (Integer.parseInt(EnglishSchool.sc.nextLine())){
+                    switch (Integer.parseInt(sc.nextLine())){
                         case 1 -> {
                             UseCaseAddPoint.execute();
                             return;
@@ -88,7 +90,7 @@ public class UseCaseBookLesson {
         int lessonId = SchoolData.lessons.size()+1;
         Student student = FindUtil.findStudent(studentId);
         System.out.print("講師ID: ");
-        int teacherId = Integer.parseInt(EnglishSchool.sc.nextLine());
+        int teacherId = Integer.parseInt(sc.nextLine());
         Teacher currentTeacher = FindUtil.findTeacher(teacherId);
         if (currentTeacher == null) {
             System.out.println("先生が見つかりません");
@@ -97,7 +99,7 @@ public class UseCaseBookLesson {
         String lessonType = CourseUtil.SelectLessonType();
 
         System.out.print("日時 (例: 2026-02-01 18): ");
-        String input = EnglishSchool.sc.nextLine();
+        String input = sc.nextLine();
         LocalDateTime dateTime;
         try {
             dateTime = DateTimeUtil.parse(input);

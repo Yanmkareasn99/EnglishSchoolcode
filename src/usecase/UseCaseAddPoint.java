@@ -1,10 +1,11 @@
 public class UseCaseAddPoint {
+    private static final Scanner sc = new Scanner(System.in);
 
     public static void execute() {
         System.out.println(Design.LINE);
         UseCaseViewStudent.execute();
         System.out.print("生徒ID: ");
-        int id = Integer.parseInt(EnglishSchool.sc.nextLine());
+        int id = Integer.parseInt(sc.nextLine());
 
         for (Student s : SchoolData.students) {
             if (s.getId() == id) {
@@ -13,7 +14,7 @@ public class UseCaseAddPoint {
                     return;
                 }
                 System.out.print("追加ポイント（200単位）: ");
-                int p = Integer.parseInt(EnglishSchool.sc.nextLine());
+                int p = Integer.parseInt(sc.nextLine());
 
                 if (s.setpoint(p)) {
                     System.out.println("ポイント追加完了");

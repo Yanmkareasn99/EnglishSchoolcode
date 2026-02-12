@@ -1,8 +1,10 @@
 public class UseCaseCancelLesson {
-        public static void execute() {
+    private static final Scanner sc = new Scanner(System.in);
+
+    public static void execute() {
         System.out.println(Design.LINE);
         System.out.print("取消するレッスンID: ");
-        int lessonId = Integer.parseInt(EnglishSchool.sc.nextLine());
+        int lessonId = Integer.parseInt(sc.nextLine());
 
         for (Lesson l : SchoolData.lessons) {
             if (l.getLessonId() == lessonId) {

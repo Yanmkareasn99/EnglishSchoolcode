@@ -1,4 +1,6 @@
 public class UseCaseChangeLessonCost {
+    private static final Scanner sc = new Scanner(System.in);
+
     public static void execute(){
         System.out.println(Design.LINE);
         UseCaseViewLessonCost.execute();
@@ -10,7 +12,7 @@ public class UseCaseChangeLessonCost {
        2. いいえ
            
     番号を入力してください>>> """);
-                switch (Integer.parseInt(EnglishSchool.sc.nextLine())){
+                switch (Integer.parseInt(sc.nextLine())){
                     case 1 -> {
                         changeCost();
                         return;
@@ -29,9 +31,9 @@ public class UseCaseChangeLessonCost {
         public static void changeCost(){
         System.out.println(Design.LINE);
         System.out.print("一ポイントの単価を入力してください>>> ");
-        SchoolData.lessonCosts.get(0).setPointValue(Integer.parseInt(EnglishSchool.sc.nextLine()));
+        SchoolData.lessonCosts.get(0).setPointValue(Integer.parseInt(sc.nextLine()));
         System.out.print("レッスン1コマの単価を入力してください>>> ");
-        SchoolData.lessonCosts.get(0).setPerLessonCost(Integer.parseInt(EnglishSchool.sc.nextLine()));
+        SchoolData.lessonCosts.get(0).setPerLessonCost(Integer.parseInt(sc.nextLine()));
         System.out.println("単価を変更しました。");
     }
 }

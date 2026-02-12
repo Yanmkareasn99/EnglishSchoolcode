@@ -1,4 +1,5 @@
 public class StaffMenu {
+    private static final Scanner sc = new Scanner(System.in);
 
     public static void showMenu() { 
         while (true) {
@@ -23,7 +24,7 @@ public class StaffMenu {
             while (true) {
                 System.out.print("番号を入力してください>>> ");
                 try {
-                    int choice = Integer.parseInt(EnglishSchool.sc.nextLine());
+                    int choice = Integer.parseInt(sc.nextLine());
                     switch (choice) {
                         case 1 -> UseCaseAddStudent.execute();
                         case 2 -> UseCaseViewStudent.execute();

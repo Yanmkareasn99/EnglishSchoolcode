@@ -1,8 +1,10 @@
 public class UseCaseRemoveStudent {
-        public static void execute() {
+    private static final Scanner sc = new Scanner(System.in);
+
+    public static void execute() {
         System.out.println(Design.LINE);
         System.out.print("退会する生徒ID: ");
-        int id = Integer.parseInt(EnglishSchool.sc.nextLine());
+        int id = Integer.parseInt(sc.nextLine());
 
         for (Student s : SchoolData.students) {
             if (s.getId() == id) {

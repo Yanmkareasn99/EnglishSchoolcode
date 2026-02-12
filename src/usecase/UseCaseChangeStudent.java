@@ -1,8 +1,10 @@
 public class UseCaseChangeStudent {
-        public static void execute() {
+    private static final Scanner sc = new Scanner(System.in);
+
+    public static void execute() {
         System.out.println(Design.LINE);
         System.out.print("変更する生徒ID: ");
-        int id = Integer.parseInt(EnglishSchool.sc.nextLine());
+        int id = Integer.parseInt(sc.nextLine());
 
         for (Student s : SchoolData.students) {
             if (s.getId() == id) {
@@ -11,7 +13,7 @@ public class UseCaseChangeStudent {
                     return;
                 }
                 System.out.print("新しいコース名: ");
-                String course = EnglishSchool.sc.nextLine();
+                String course = sc.nextLine();
                 System.out.println("****コース変更****");
                 System.out.println("変更前: " + s.getCourse());
                 s.setCourse(course);

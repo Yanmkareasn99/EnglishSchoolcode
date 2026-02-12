@@ -1,4 +1,5 @@
 public class CourseUtil {
+    private static final Scanner sc = new Scanner(System.in);
     private static final String[] COURSES = {"日常会話", "留学準備", "ビジネス", "キッズ"};
     private static final String[] LEVELS = {"初級", "上級"};
     //private static final String[] LESSONS = {"グループレッスン", "マンツーマン"};
@@ -27,7 +28,7 @@ public class CourseUtil {
                     """);
             System.out.print("番号を入力してください>>> ");
             try {
-                int choice = Integer.parseInt(EnglishSchool.sc.nextLine());
+                int choice = Integer.parseInt(sc.nextLine());
                 switch (choice) {
                     case 1 -> { return 0; }
                     case 2 -> { return 1; }
@@ -51,7 +52,7 @@ public class CourseUtil {
                     """);
             System.out.print("番号を入力してください>>> ");
             try {
-                int choice = Integer.parseInt(EnglishSchool.sc.nextLine());
+                int choice = Integer.parseInt(sc.nextLine());
                 switch (choice) {
                     case 1 -> { return 0; }
                     case 2 -> { return 1; }
@@ -73,7 +74,7 @@ public class CourseUtil {
                     """);
             System.out.print("番号を入力してください>>> ");
             try {
-                int choice = Integer.parseInt(EnglishSchool.sc.nextLine());
+                int choice = Integer.parseInt(sc.nextLine());
                 switch (choice) {
                     case 1 -> { return true; }
                     case 2 -> { return false; }
@@ -94,7 +95,7 @@ public class CourseUtil {
                     2. マンツーマン
                     番号を入力してください>>> """);
             try {
-                int choice = Integer.parseInt(EnglishSchool.sc.nextLine());
+                int choice = Integer.parseInt(sc.nextLine());
                 switch (choice) {
                     case 1 -> { return("グループレッスン"); }
                     case 2 -> { return("マンツーマン"); }
