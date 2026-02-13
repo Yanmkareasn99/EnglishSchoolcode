@@ -4,21 +4,21 @@ import java.time.LocalDateTime;
 public class Student {
 
     private int id, age, points;
-    private long phone;
+    private long phone, cardNumber;
     private String name, sex, email, course, status, address, lesson;
     private LocalDateTime pointExpireAt;
     private LocalDate registerDate;
 
     public Student(int id, String name, int age, String sex,
                    long phone, String email, String course,
-                   int points, String status, String lesson, String address) {
-        this(id, name, age, sex, phone, email, course, points, status, lesson, address, null, null);
+                   int points, String status, String lesson, String address, long cardNumber) {
+        this(id, name, age, sex, phone, email, course, points, status, lesson, address, null, null, cardNumber);
     }
 
     public Student(int id, String name, int age, String sex,
                    long phone, String email, String course,
                    int points, String status, String lesson, String address,
-                   LocalDateTime pointExpireAt, LocalDate registerDate) {
+                   LocalDateTime pointExpireAt, LocalDate registerDate, long cardNumber) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -32,6 +32,7 @@ public class Student {
         this.address = address;
         this.pointExpireAt = pointExpireAt;
         this.registerDate = registerDate;
+        this.cardNumber = cardNumber;
     }
 
     public int getId() { return id; }
@@ -49,6 +50,7 @@ public class Student {
     public String getAddress() { return address; }
     public String getLesson() { return lesson; }
     public LocalDate getRegisterDate() { return registerDate; }
+    public long getCardNumber() { return cardNumber; }
 
     public void setCourse(String course) { this.course = course; }
     public void setLesson(String lesson) { this.lesson = lesson; }
@@ -110,7 +112,7 @@ public class Student {
         return id + "," + name + "," + age + "," + sex + "," +
                 phone + "," + email + "," + points + "," +
                 course + "," + lesson + "," + status + "," + address + "," +
-                formatPointExpireAt() + "," + formatRegisterDate();
+                formatPointExpireAt() + "," + formatRegisterDate() + "," + cardNumber;
     }
 
 

@@ -8,7 +8,7 @@ public class CsvUtil {
     public static void saveStudents(List<Student> students) {
         try (FileWriter fw = new FileWriter("students.csv")) {
 
-            fw.write("id,name,age,sex,phone,email,point,course,lesson,status,address,pointExpireAt,registerDate\n");
+            fw.write("id,name,age,sex,phone,email,point,course,lesson,status,address,pointExpireAt,registerDate,cardNumber\n");
 
             for (Student s : students) {
                 fw.write(s.toCsv() + "\n");
@@ -103,31 +103,46 @@ public class CsvUtil {
             String line = br.readLine();
 
             while ((line = br.readLine()) != null) {
-                String[] d = line.split(",");
+                String[] d = line.split(",", -1);
 
                 LocalDateTime pointExpireAt = null;
                 if (d.length > 11 && !d[11].isEmpty()) {
                     pointExpireAt = DateTimeUtil.parse(d[11]);
                 }
+
                 LocalDate registerDate = null;
                 if (d.length > 12 && !d[12].isEmpty()) {
                     registerDate = LocalDate.parse(d[12]);
                 }
 
+                int id = d.length > 0 && !d[0].isEmpty() ? Integer.parseInt(d[0]) : 0;
+                String name = d.length > 1 ? d[1] : "";
+                int age = d.length > 2 && !d[2].isEmpty() ? Integer.parseInt(d[2]) : 0;
+                String sex = d.length > 3 ? d[3] : "";
+                long phone = d.length > 4 && !d[4].isEmpty() ? Long.parseLong(d[4]) : 0L;
+                String email = d.length > 5 ? d[5] : "";
+                int points = d.length > 6 && !d[6].isEmpty() ? Integer.parseInt(d[6]) : 0;
+                String course = d.length > 7 ? d[7] : "";
+                String lesson = d.length > 8 ? d[8] : "";
+                String status = d.length > 9 ? d[9] : "";
+                String address = d.length > 10 ? d[10] : "";
+                long cardNumber = d.length > 13 && !d[13].isEmpty() ? Long.parseLong(d[13]) : 0L;
+
                 Student s = new Student(
-                        Integer.parseInt(d[0]),         // id
-                        d[1],                           // name
-                        Integer.parseInt(d[2]),         // age
-                        d[3],                           // sex
-                        Long.parseLong(d[4]),         // phone
-                        d[5],                           // email
-                        d[7],                           // course
-                        Integer.parseInt(d[6]),         // point
-                        d[9],                           // status
-                        d[8],                           // lesson
-                        d.length > 10 ? d[10] : "",     // address
+                        id,
+                        name,
+                        age,
+                        sex,
+                        phone,
+                        email,
+                        course,
+                        points,
+                        status,
+                        lesson,
+                        address,
                         pointExpireAt,
-                        registerDate
+                        registerDate,
+                        cardNumber
                 );
 
                 students.add(s);
