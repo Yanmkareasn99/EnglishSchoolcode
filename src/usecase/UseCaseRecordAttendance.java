@@ -43,8 +43,7 @@ public class UseCaseRecordAttendance {
                 System.out.println("正しい番号を入力してください。");
                 return;
         }
-
-        l.setStatus(newStatus);
+        l.setStatus(l.getStatus() + " 出席状況： " + newStatus);
         System.out.println(newStatus + "を登録しました。");
         return;
     }
