@@ -18,6 +18,8 @@ public class UseCaseAddPoint {
                 int p = Integer.parseInt(sc.nextLine());
 
                 if (s.setpoint(p)) {
+                    System.out.print("カード番号 : ");
+                    long n = Long.parseLong(sc.nextLine());
                     System.out.println("ポイント追加完了");
                 } else {
                     System.out.println("200単位で入力してください");
