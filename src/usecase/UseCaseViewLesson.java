@@ -1,3 +1,4 @@
+package usecase;
 public class UseCaseViewLesson {
         public static void execute() {
         System.out.println(Design.LINE);
