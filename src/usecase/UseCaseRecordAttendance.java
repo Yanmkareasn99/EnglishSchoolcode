@@ -4,22 +4,52 @@ public class UseCaseRecordAttendance {
 
     public static void execute() {
         System.out.println(Design.LINE);
-        System.out.print("レッスンID: ");
-        int lessonId = Integer.parseInt(sc.nextLine());
+        System.out.print("レッスンIDを入力してください:");
+        
+        String input = sc.nextLine();
 
-        for (Lesson l : SchoolData.lessons) {
-            if (l.getLessonId() == lessonId) {
-                Student student = FindUtil.findStudent(l.getStudentId());
-                if (student != null) {
-                    String summary = l.getDateTime() + " " + l.getLessonType();
-                    student.setLesson(summary);
-                    System.out.println("出席を登録しました。");
-                } else {
-                    System.out.println("生徒が見つかりません。");
-                }
-                return;
-            }
+        int lessonId;
+
+
+        try {
+            lessonId = Integer.parseInt(input);
+        } catch (NumberFormatException e) {
+            System.err.println("数値を入力してください。");
+            return;
         }
-        System.out.println("レッスンが見つかりません。"); 
+
+        
+        
+        
+       for (Lesson l : SchoolData.lessons) {
+    if (l.getLessonId() == lessonId) {
+
+        System.out.println("1: 出席  2: 欠席  3: 遅刻 を選んでください:");
+        String choice = sc.nextLine();
+
+        String newStatus;
+
+        switch (choice) {
+            case "1":
+                newStatus = "出席";
+                break;
+            case "2":
+                newStatus = "欠席";
+                break;
+            case "3":
+                newStatus = "遅刻";
+                break;
+            default:
+                System.out.println("正しい番号を入力してください。");
+                return;
+        }
+
+        l.setStatus(newStatus);
+        System.out.println(newStatus + "を登録しました。");
+        return;
+    }
+}
+
+    System.out.println("レッスンが見つかりません。");
     }
 }
