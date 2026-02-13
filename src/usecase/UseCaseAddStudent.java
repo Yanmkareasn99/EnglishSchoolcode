@@ -25,10 +25,13 @@ public class UseCaseAddStudent {
 
         String course = CourseUtil.selectCourse();
 
+        System.out.print("カード番号: ");
+        long cardNumber = Long.parseLong(sc.nextLine());
+
         Student s = new Student(
                 id, name, age, sex,
                 phone, email, course,
-                0, "在籍", "", ""
+                0, "在籍", "", "", cardNumber
         );
         s.setRegisterDate(LocalDate.now());
 
